@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DramaManagement.Models.Drama>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Director.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DramaType.TypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScriptWriter.FirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Director.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DramaType.TypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScriptWriter.FirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DramaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DramaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DramaID })
+        </td>
+    </tr>
+}
+
+</table>

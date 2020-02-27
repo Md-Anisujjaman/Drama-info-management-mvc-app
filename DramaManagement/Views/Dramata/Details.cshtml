@@ -1,0 +1,58 @@
+﻿@model DramaManagement.Models.Drama
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Drama</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DramaType.TypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DramaType.TypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScriptWriter.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScriptWriter.FirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DramaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
